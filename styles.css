@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+:root{
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+img {
+    max-width: 100%;
+}
+
+li{
+    list-style: none;
+}
+
+span{
+    display: inline-block;
+}
+
+body{
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--light-grayish-blue);
+}
+
+main{
+    margin: 2rem 1rem;
+}
+
+.card{
+    background-color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .image-card{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.content{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-inline: 1.5rem;
+}
+
+.content h1{
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: var(--very-dark-grayish-blue);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.content p{
+    line-height: 1.5;
+    color: var(--desaturated-dark-blue);
+    font-weight: 500;
+    margin-bottom: 3rem;
+}
+
+.profile {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.avatar {
+    display: flex;
+    gap: 1rem;
+    font-size: 14px;
+}
+
+.avatar h3{
+    color: var(--very-dark-grayish-blue);
+    font-weight: 600;
+}
+
+.avatar span{
+    color: var(--desaturated-dark-blue);
+}
+
+.share-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 25px;
+    color: var(--very-dark-grayish-blue);
+    cursor: pointer;
+    z-index: 2;
+    transition: font-size 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.share-icon:hover{
+    font-size: 30px;
+}
+.share-links{
+    background-color: var(--very-dark-grayish-blue);
+    display: inline-block;
+    width: 100%;
+    padding: 2rem;
+    position: absolute;
+    bottom: -8rem;
+    z-index: 1;
+    transition: bottom .3s ease-in-out;
+}
+
+ul{
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    text-align: center;
+}
+
+ul button{
+    width: 30px;
+    height: 30px;
+    color: var(--light-grayish-blue);
+    border: none;
+    font-size: 30px;
+    background-color: var(--very-dark-grayish-blue);
+}
+ul span{
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    color: var(--grayish-blue);
+}
+
+.share-links button{
+    cursor: pointer;
+}
+.share-links button:hover{
+    color: var(--desaturated-dark-blue);
+}
+
+.active{
+    bottom: 0;
+}
+
+.share-icon-active{
+    background-color: var(--desaturated-dark-blue);
+    color: var(--light-grayish-blue);
+}
+
+/*Media Query*/
+@media (min-width: 768px){
+    main{
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        margin: 0rem 1rem
+    }
+
+    .card{
+        display: flex;
+        gap: 1rem;
+        overflow: visible;
+    }
+
+    .content{
+        padding-right: 3rem;
+        flex-basis: 60%;
+    }
+
+    .image-card{
+        flex-basis: 40%;
+    }
+
+    .image-card img{
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+    }
+
+    .share-links{
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+
+        width: auto;
+        bottom: 6rem;
+        right: -3.5rem;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    ul button{
+        font-size: 20px;
+    }
+    ul span{
+        font-size: 12px;
+    }
+
+    .triangle{
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent ;
+        border-right: 20px solid transparent;
+        border-top: 20px solid var(--very-dark-grayish-blue);
+
+        position: absolute;
+        bottom: -1rem;
+        left: 36%;
+        overflow: visible;
+    }
+
+    .active{
+        opacity: 1;
+        visibility: visible;
+    }
+}
